@@ -156,8 +156,9 @@ button {
 }
 
 .hero-single {
-  grid-template-columns: 1fr;
-  gap: 0;
+  grid-template-columns: minmax(0, 1.5fr) minmax(260px, 0.62fr);
+  gap: 56px;
+  align-items: end;
   padding-bottom: 40px;
 }
 
@@ -167,7 +168,7 @@ button {
 }
 
 .hero-copy-single {
-  max-width: 760px;
+  max-width: 100%;
 }
 
 .eyebrow,
@@ -200,7 +201,11 @@ button {
 }
 
 .hero-copy-single h1 {
-  max-width: 12ch;
+  max-width: 11ch;
+}
+
+.hero-copy-single .lead {
+  max-width: 60ch;
 }
 
 .lead,
@@ -225,10 +230,47 @@ button {
 }
 
 .hero-supporting-copy {
-  max-width: 62ch;
+  max-width: 58ch;
   margin: 18px 0 0;
   color: var(--muted);
   line-height: 1.85;
+}
+
+.hero-aside {
+  display: grid;
+  gap: 14px;
+  align-self: stretch;
+  padding-bottom: 8px;
+}
+
+.hero-aside-card {
+  padding: 20px 22px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(246, 248, 247, 0.94));
+  border: 1px solid rgba(188, 198, 200, 0.42);
+  border-radius: 20px;
+}
+
+.hero-aside-label {
+  margin: 0 0 10px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+}
+
+.hero-aside-value {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.7rem;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+}
+
+.hero-aside-copy {
+  margin: 10px 0 0;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.97rem;
 }
 
 .hero-actions {
@@ -532,6 +574,18 @@ button {
   margin: 0;
 }
 
+@media (min-width: 981px) {
+  .hero-single {
+    padding-top: 56px;
+    padding-bottom: 48px;
+  }
+
+  .hero-copy-single h1 {
+    font-size: clamp(3.4rem, 4.6vw, 5.2rem);
+    line-height: 0.98;
+  }
+}
+
 @media (max-width: 980px) {
   .page-shell {
     padding: 0 24px 44px;
@@ -543,6 +597,16 @@ button {
   .intro-grid,
   .card-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-single {
+    gap: 28px;
+  }
+
+  .hero-copy-single h1,
+  .hero-copy-single .lead,
+  .hero-supporting-copy {
+    max-width: 100%;
   }
 
   .updates-track {
