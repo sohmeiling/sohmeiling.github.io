@@ -155,9 +155,19 @@ button {
   padding: 44px 0 84px;
 }
 
+.hero-single {
+  grid-template-columns: 1fr;
+  gap: 0;
+  padding-bottom: 40px;
+}
+
 .page-hero {
   max-width: 860px;
   padding: 52px 0 56px;
+}
+
+.hero-copy-single {
+  max-width: 760px;
 }
 
 .eyebrow,
@@ -189,6 +199,10 @@ button {
   max-width: 14ch;
 }
 
+.hero-copy-single h1 {
+  max-width: 12ch;
+}
+
 .lead,
 .section-copy,
 .intro-grid p,
@@ -208,6 +222,13 @@ button {
   display: flex;
   gap: 14px;
   align-items: center;
+}
+
+.hero-supporting-copy {
+  max-width: 62ch;
+  margin: 18px 0 0;
+  color: var(--muted);
+  line-height: 1.85;
 }
 
 .hero-actions {
@@ -319,6 +340,64 @@ button {
 
 .side-note {
   max-width: 280px;
+}
+
+.updates-banner {
+  padding-top: 8px;
+}
+
+.banner-heading {
+  margin-bottom: 18px;
+}
+
+.updates-shell {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+}
+
+.updates-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(260px, 32%);
+  gap: 16px;
+  overflow-x: auto;
+  padding: 4px 2px 10px;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+}
+
+.updates-track::-webkit-scrollbar {
+  display: none;
+}
+
+.update-chip {
+  min-height: 120px;
+  padding: 22px 24px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(247, 249, 248, 0.98));
+  border: 1px solid rgba(188, 198, 200, 0.42);
+  border-radius: 22px;
+  scroll-snap-align: start;
+}
+
+.update-chip span {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+}
+
+.update-chip p {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.updates-button {
+  flex-shrink: 0;
 }
 
 .accent-line {
@@ -466,6 +545,10 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .updates-track {
+    grid-auto-columns: minmax(280px, 70%);
+  }
+
   .hero h1,
   .page-hero h1 {
     max-width: 14ch;
@@ -507,6 +590,22 @@ button {
   .hero,
   .page-hero {
     padding-top: 16px;
+  }
+
+  .hero-single {
+    padding-bottom: 28px;
+  }
+
+  .updates-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .updates-button {
+    display: none;
+  }
+
+  .updates-track {
+    grid-auto-columns: 88%;
   }
 
   .hero h1,
