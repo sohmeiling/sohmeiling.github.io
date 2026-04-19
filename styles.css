@@ -167,6 +167,25 @@ button {
   padding: 52px 0 56px;
 }
 
+.page-hero-compact {
+  max-width: 980px;
+  padding-bottom: 44px;
+}
+
+.page-hero-compact h1 {
+  max-width: 18ch;
+  font-size: clamp(2.1rem, 3vw, 3rem);
+  line-height: 1.04;
+}
+
+.page-hero-compact .lead {
+  max-width: 62ch;
+}
+
+.hero-break {
+  display: block;
+}
+
 .hero-copy-single {
   max-width: 100%;
 }
@@ -486,10 +505,27 @@ button {
   letter-spacing: -0.03em;
 }
 
+.narrative-block {
+  display: grid;
+  gap: 18px;
+  max-width: 760px;
+}
+
+.narrative-block p,
+.feature-summary,
+.feature-meta,
+.publication-card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.85;
+  font-size: 1rem;
+}
+
 .intro-grid,
 .split-section,
 .contact-grid,
-.card-grid {
+.card-grid,
+.editorial-columns {
   display: grid;
   gap: 24px;
 }
@@ -513,11 +549,19 @@ button {
   gap: 20px;
 }
 
+.editorial-columns {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+
 .info-card,
 .publication-item,
 .mini-item,
 .contact-links,
-.timeline-item {
+.timeline-item,
+.study-item,
+.publication-card,
+.feature-publication {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(250, 251, 250, 0.96));
   border: 1px solid rgba(188, 198, 200, 0.42);
   border-radius: 24px;
@@ -547,9 +591,209 @@ button {
 
 .publication-list,
 .mini-list,
-.timeline {
+.timeline,
+.study-list,
+.publication-feed {
   display: grid;
   gap: 16px;
+}
+
+.study-item {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 18px;
+  padding: 28px 30px;
+}
+
+.study-item h3,
+.publication-card h3,
+.feature-publication h2 {
+  margin: 0 0 10px;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+.study-item h3,
+.publication-card h3 {
+  font-size: 1.7rem;
+}
+
+.study-item p {
+  margin: 0;
+}
+
+.feature-publication {
+  padding: 34px 36px;
+}
+
+.editorial-feature {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.58fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+.feature-visual {
+  display: grid;
+  gap: 14px;
+}
+
+.feature-visual-kicker {
+  margin: 0;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.74rem;
+}
+
+.feature-cover {
+  display: grid;
+  align-content: end;
+  min-height: 100%;
+  padding: 22px;
+  background:
+    linear-gradient(180deg, rgba(221, 229, 225, 0.82), rgba(247, 248, 246, 0.96)),
+    radial-gradient(circle at top left, rgba(185, 150, 113, 0.24), transparent 36%);
+  border: 1px solid rgba(188, 198, 200, 0.48);
+  border-radius: 22px;
+}
+
+.feature-cover span,
+.feature-cover p {
+  margin: 0;
+}
+
+.feature-cover span {
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+}
+
+.feature-cover strong {
+  display: block;
+  margin: 18px 0 12px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(2.2rem, 4vw, 3.3rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+
+.feature-cover p {
+  color: var(--text);
+  line-height: 1.55;
+  font-size: 1rem;
+}
+
+.feature-body {
+  display: grid;
+  align-content: start;
+}
+
+.publication-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.publication-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(221, 229, 225, 0.72);
+  color: var(--text);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+}
+
+.publication-tag-muted {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(188, 198, 200, 0.5);
+}
+
+.feature-kicker,
+.publication-card-meta {
+  margin: 0 0 14px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.76rem;
+}
+
+.feature-publication h2 {
+  max-width: 20ch;
+  font-size: clamp(2rem, 3vw, 2.9rem);
+}
+
+.feature-summary {
+  max-width: 66ch;
+}
+
+.feature-meta {
+  margin-top: 18px;
+}
+
+.publication-feed {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.publication-card {
+  overflow: clip;
+}
+
+.publication-thumb {
+  display: grid;
+  align-content: end;
+  min-height: 180px;
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(188, 198, 200, 0.42);
+}
+
+.publication-thumb span {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 28px;
+  padding: 0 10px;
+  align-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.88);
+  color: var(--text);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.publication-thumb-demographic {
+  background:
+    linear-gradient(180deg, rgba(239, 243, 241, 0.92), rgba(250, 251, 250, 0.98)),
+    radial-gradient(circle at top left, rgba(185, 150, 113, 0.22), transparent 36%);
+}
+
+.publication-thumb-language {
+  background:
+    linear-gradient(180deg, rgba(244, 247, 245, 0.96), rgba(252, 252, 251, 0.98)),
+    radial-gradient(circle at right top, rgba(221, 229, 225, 0.8), transparent 30%);
+}
+
+.publication-thumb-conflict {
+  background:
+    linear-gradient(180deg, rgba(242, 245, 244, 0.96), rgba(249, 250, 248, 0.98)),
+    linear-gradient(135deg, rgba(188, 198, 200, 0.2) 25%, transparent 25%);
+  background-size: auto, 22px 22px;
+}
+
+.publication-thumb-neuro {
+  background:
+    linear-gradient(180deg, rgba(239, 242, 245, 0.92), rgba(249, 250, 251, 0.98)),
+    radial-gradient(circle at center, rgba(185, 150, 113, 0.18), transparent 38%);
+}
+
+.publication-card-body {
+  padding: 24px 26px 28px;
 }
 
 .publication-item {
@@ -608,7 +852,9 @@ button {
   .split-section,
   .contact-grid,
   .intro-grid,
-  .card-grid {
+  .card-grid,
+  .editorial-columns,
+  .publication-feed {
     grid-template-columns: 1fr;
   }
 
@@ -629,6 +875,10 @@ button {
   .hero h1,
   .page-hero h1 {
     max-width: 14ch;
+  }
+
+  .editorial-feature {
+    grid-template-columns: 1fr;
   }
 
   .portrait-frame {
@@ -690,12 +940,20 @@ button {
     font-size: clamp(2.5rem, 13vw, 3.5rem);
   }
 
+  .hero-break {
+    display: none;
+  }
+
   .slider-controls,
   .site-footer {
     flex-wrap: wrap;
   }
 
   .publication-item {
+    grid-template-columns: 1fr;
+  }
+
+  .study-item {
     grid-template-columns: 1fr;
   }
 }
